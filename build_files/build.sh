@@ -20,18 +20,18 @@ dnf5 install -y podman-compose podman-docker qemu qemu-kvm
 dnf5 install -y blueman p7zip zsh
 dnf5 install -y w3m w3m-img unetbootin fastfetch bat btop rocm-smi
 # remove unused packages
-dnf5 remove -y gnome-session-wayland-session gdm gnome-remote-desktop
-dnf5 remove -y firefox firefox-lang
+#dnf5 remove -y gnome-session-wayland-session gdm gnome-remote-desktop
+dnf5 remove -y firefox firefox-langpacks
 
 # Install flatpaks
-flatpak install --system -y flathub org.mozilla.firefox
-flatpak install --system -y flathub org.gnome.Calculator
-flatpak install --system -y flathub org.gnome.FileRoller
-flatpak install --system -y flathub org.gnome.gedit
-flatpak install --system -y flathub org.gnome.Loupe
-flatpak install --system -y flathub org.gnome.Snapshot
-flatpak install --system -y flathub org.gnome.Papers
-flatpak install --system -y flathub org.gnome.SimpleScan
+#flatpak install --system -y flathub org.mozilla.firefox
+#flatpak install --system -y flathub org.gnome.Calculator
+#flatpak install --system -y flathub org.gnome.FileRoller
+#flatpak install --system -y flathub org.gnome.gedit
+#flatpak install --system -y flathub org.gnome.Loupe
+#flatpak install --system -y flathub org.gnome.Snapshot
+#flatpak install --system -y flathub org.gnome.Papers
+#flatpak install --system -y flathub org.gnome.SimpleScan
 
 
 # Use a COPR Example:
@@ -44,3 +44,5 @@ flatpak install --system -y flathub org.gnome.SimpleScan
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+
+systemctl enable firstboot-single

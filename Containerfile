@@ -26,6 +26,11 @@ FROM ghcr.io/ublue-os/base-main:latest
 # RUN rm /opt && mkdir /opt
 
 ### MODIFICATIONS
+
+## Copy files and directories to image
+COPY --chmod=0644 ./systemd/firstboot-single.service /usr/lib/systemd/system/firstboot-single.service
+
+
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 

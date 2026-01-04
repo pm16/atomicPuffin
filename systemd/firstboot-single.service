@@ -1,0 +1,19 @@
+[Unit]
+Description=Setup first things that cannot be done during container creation.
+After=multi-user.taraget
+
+[Service]
+Type=oneshot
+RemainAFterExit=yes
+ExecStart=/usr/bin/echo "Starting firstboot-single service."
+ExecStart=/usr/bin/flatpak install --system -y flathub org.mozilla.firefox
+ExecStart=/usr/bin/flatpak install --system -y flathub org.gnome.Calculator
+ExecStart=/usr/bin/flatpak install --system -y flathub org.gnome.FileRoller
+ExecStart=/usr/bin/flatpak install --system -y flathub org.gnome.gedit
+ExecStart=/usr/bin/flatpak install --system -y flathub org.gnome.Loupe
+ExecStart=/usr/bin/flatpak install --system -y flathub org.gnome.Snapshot
+ExecStart=/usr/bin/flatpak install --system -y flathub org.gnome.Papers
+ExecStart=/usr/bin/flatpak install --system -y flathub org.gnome.SimpleScan
+[Install]
+WantedBy=multi-user.target
+
