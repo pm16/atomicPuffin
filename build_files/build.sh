@@ -14,8 +14,25 @@ set -ouex pipefail
 dnf5 -y copr enable solopasha/hyprland
 dnf5 install -y hyprland xdg-desktop-portal-hyprland hyprland-plugins hyprpaper hypridle hyprpicker hyprlock hyprsunset
 dnf5 install -y hyprpolkitagent waybar uwsm wofi cliphist nwg-look nwg-clipman dunst hyprcursor hyprland-qt-support hyprland-qtutils
-dnf5 install -y hyprland-autoname-workspaces alacritty sddm gnome-keyring steam-devices micro tmux git podman-compose podman-docker qemu qemu-kvm blueman p7zip zsh
-dnf5 install -y w3m w3m-img gparted unetbootin fastfetch bat
+dnf5 install -y hyprland-autoname-workspaces alacritty steam-devices micro tmux git 
+dnf5 install -y sddm gnome-keyring gnome-keyring-pam nautilus
+dnf5 install -y podman-compose podman-docker qemu qemu-kvm 
+dnf5 install -y blueman p7zip zsh
+dnf5 install -y w3m w3m-img unetbootin fastfetch bat btop rocm-smi
+# remove unused packages
+dnf5 remove -y gnome-session-wayland-session gdm gnome-remote-desktop
+dnf5 remove -y firefox firefox-lang
+
+# Install flatpaks
+flatpak install -y flathub org.mozilla.firefox
+flatpak install -y flathub org.gnome.Calculator
+flatpak install -y flathub org.gnome.FileRoller
+flatpak install -y flathub org.gnome.gedit
+flatpak install -y flathub org.gnome.Loupe
+flatpak install -y flathub org.gnome.Snapshot
+flatpak install -y flathub org.gnome.Papers
+flatpak install -y flathub org.gnome.SimpleScan
+
 
 # Use a COPR Example:
 #
