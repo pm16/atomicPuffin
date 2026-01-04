@@ -24,14 +24,14 @@ dnf5 remove -y gnome-session-wayland-session gdm gnome-remote-desktop
 dnf5 remove -y firefox firefox-lang
 
 # Install flatpaks
-flatpak install -y flathub org.mozilla.firefox
-flatpak install -y flathub org.gnome.Calculator
-flatpak install -y flathub org.gnome.FileRoller
-flatpak install -y flathub org.gnome.gedit
-flatpak install -y flathub org.gnome.Loupe
-flatpak install -y flathub org.gnome.Snapshot
-flatpak install -y flathub org.gnome.Papers
-flatpak install -y flathub org.gnome.SimpleScan
+flatpak install --system -y flathub org.mozilla.firefox
+flatpak install --system -y flathub org.gnome.Calculator
+flatpak install --system -y flathub org.gnome.FileRoller
+flatpak install --system -y flathub org.gnome.gedit
+flatpak install --system -y flathub org.gnome.Loupe
+flatpak install --system -y flathub org.gnome.Snapshot
+flatpak install --system -y flathub org.gnome.Papers
+flatpak install --system -y flathub org.gnome.SimpleScan
 
 
 # Use a COPR Example:
